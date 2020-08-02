@@ -29,13 +29,14 @@ export function initExtend (Vue: GlobalAPI) {
     if (process.env.NODE_ENV !== 'production' && name) {
       validateComponentName(name)
     }
-
+    // 实现一个构造函数Sub，Sub的原型的原型是Vue的原型
     const Sub = function VueComponent (options) {
       this._init(options)
     }
     Sub.prototype = Object.create(Super.prototype)
     Sub.prototype.constructor = Sub
     Sub.cid = cid++
+    // 合并父类的options
     Sub.options = mergeOptions(
       Super.options,
       extendOptions

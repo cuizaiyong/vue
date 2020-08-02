@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observer</title>
+  <script src="/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{ msg }}</p>
+  </div>
+</body>
+<script>
+  new Vue({
+    data: {
+      msg: 'Hello cuvee'
+    }
+  }).$mount('#app')
+</script>
+</html>
